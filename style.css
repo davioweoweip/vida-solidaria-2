@@ -1,0 +1,150 @@
+:root {
+  --color-primary: #0466c8;
+  --color-primary-dark: #0353a4;
+  --color-secondary: #023e8a;
+  --color-background: #fafafa;
+  --color-text: #333;
+  --color-footer: #001d3d;
+
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 48px;
+  --spacing-6: 64px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==== NAVBAR ==== */
+header {
+  background: var(--color-primary);
+  color: white;
+  padding: var(--spacing-2) 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-2);
+}
+
+.logo {
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-2);
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: calc(var(--spacing-5) + 40px) var(--spacing-2) var(--spacing-5);
+  flex: 1;
+}
+
+h1,
+h2 {
+  color: var(--color-secondary);
+}
+
+section {
+  margin-bottom: var(--spacing-5);
+}
+
+.hero img {
+  width: 50px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: var(--spacing-2);
+  border-radius: 10px;
+}
+
+button {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--spacing-2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--color-primary-dark);
+}
+
+footer {
+  background: var(--color-footer);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-2) 0;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background: var(--color-primary-dark);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: var(--spacing-2);
+    border-radius: 0 0 10px 10px;
+    display: none;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+}
